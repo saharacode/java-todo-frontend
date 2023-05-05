@@ -31,4 +31,10 @@ public class TodoRepo {
     public Todo getTodoById(String id) {
         return todoMap.get(id); // return the Todo with the requested id
     }
+
+    public Todo editStatus(String id, Todo changedTodo) {
+        Todo todo = todoMap.get(id); // get the todo with the requested id
+        todo.setStatus(changedTodo.getStatus()); // edit the status to the requested status
+        return todo;
+    }
 }

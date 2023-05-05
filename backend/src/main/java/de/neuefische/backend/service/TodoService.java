@@ -26,4 +26,8 @@ public class TodoService {
     public Todo getTodoById(String id) {
         return todoRepo.getTodoById(id);
     }
+
+    public Todo editStatus(String id, Todo changedTodo) {
+        return todoRepo.editStatus(id, changedTodo);
+    }
 }

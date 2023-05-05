@@ -28,4 +28,12 @@ public class TodoController {
         return todoService.getTodoById(id);
     }
 
+    @PutMapping("/todo/{id}")
+    public Todo editStatus(@PathVariable String id, @RequestBody Todo changedTodo){
+        return todoService.editStatus(id, changedTodo);
+    }
+
+    //@DeleteMapping("/todo/{id}")
+
+
 }
