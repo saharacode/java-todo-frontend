@@ -3,10 +3,9 @@ package de.neuefische.backend.controller;
 import de.neuefische.backend.model.Todo;
 import de.neuefische.backend.service.TodoService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -17,6 +16,11 @@ public class TodoController {
     @PostMapping("/todo")
     public Todo addTodo(@RequestBody Todo newTodo){
         return todoService.addTodo(newTodo);
+    }
+
+    @GetMapping("/todo")
+    public List<Todo> getAllTodos(){
+        return todoService.getAllTodos();
     }
 
 }
