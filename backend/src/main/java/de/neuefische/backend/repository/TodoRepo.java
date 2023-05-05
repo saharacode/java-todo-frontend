@@ -40,7 +40,7 @@ public class TodoRepo {
     public boolean deleteTodo(String id) {
         boolean deleteStatus = false;
         todoMap.remove(id);
-        if (todoMap.isEmpty()){ // change status when the delete was successful
+        if (!todoMap.containsKey(id)){ // change status when the key is not existing anymore
             deleteStatus = true;
         }
         return deleteStatus;
