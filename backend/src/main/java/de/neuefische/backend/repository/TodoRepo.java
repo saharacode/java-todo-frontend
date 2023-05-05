@@ -33,7 +33,8 @@ public class TodoRepo {
     }
 
     public Todo editStatus(String id, Todo changedTodo) {
-        todoMap.replace(id,changedTodo); // exchange values, that status and name of todo can change
+        Todo todoWithId = new Todo(id,changedTodo.getDescription(),changedTodo.getStatus()); // making sure that id-property is not empty (important for integrationtest
+        todoMap.replace(id,todoWithId); // exchange values, that status and name of todo can change
         return todoMap.get(id);
     }
 
