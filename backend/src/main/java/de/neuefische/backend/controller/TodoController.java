@@ -33,7 +33,10 @@ public class TodoController {
         return todoService.editStatus(id, changedTodo);
     }
 
-    //@DeleteMapping("/todo/{id}")
+    @DeleteMapping("/todo/{id}")
+    public boolean deleteTodo(@PathVariable String id){
+        return todoService.deleteTodo(id);
+    }
 
 
 }

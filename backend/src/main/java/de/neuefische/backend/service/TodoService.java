@@ -30,4 +30,8 @@ public class TodoService {
     public Todo editStatus(String id, Todo changedTodo) {
         return todoRepo.editStatus(id, changedTodo);
     }
+
+    public boolean deleteTodo(String id) {
+        return todoRepo.deleteTodo(id);
+    }
 }

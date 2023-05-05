@@ -33,8 +33,16 @@ public class TodoRepo {
     }
 
     public Todo editStatus(String id, Todo changedTodo) {
-        Todo todo = todoMap.get(id); // get the todo with the requested id
-        todo.setStatus(changedTodo.getStatus()); // edit the status to the requested status
-        return todo;
+        todoMap.replace(id,changedTodo); // exchange values, that status and name of todo can change
+        return todoMap.get(id);
+    }
+
+    public boolean deleteTodo(String id) {
+        boolean deleteStatus = false;
+        todoMap.remove(id);
+        if (todoMap.isEmpty()){ // change status when the delete was successful
+            deleteStatus = true;
+        }
+        return deleteStatus;
     }
 }
