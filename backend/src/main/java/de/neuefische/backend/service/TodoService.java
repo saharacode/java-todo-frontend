@@ -22,4 +22,8 @@ public class TodoService {
     public List<Todo> getAllTodos() {
         return todoRepo.getAllTodos();
     }
+
+    public Todo getTodoById(String id) {
+        return todoRepo.getTodoById(id);
+    }
 }

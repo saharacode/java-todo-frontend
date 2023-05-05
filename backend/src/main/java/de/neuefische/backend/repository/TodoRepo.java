@@ -21,10 +21,14 @@ public class TodoRepo {
     }
 
     public List<Todo> getAllTodos() {
-        List<Todo> todoList= new ArrayList<>();
+        List<Todo> todoList= new ArrayList<>(); // get every todo and put it into a list.
         for (String mapKey: todoMap.keySet()) {
             todoList.add(todoMap.get(mapKey));
         }
         return todoList;
+    }
+
+    public Todo getTodoById(String id) {
+        return todoMap.get(id); // return the Todo with the requested id
     }
 }
